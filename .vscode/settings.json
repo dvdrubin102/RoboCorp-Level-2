@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "/Users/gregoryiii/Desktop/RoboCorp/level-2-robot/."
+    ],
+    "python.terminal.activateEnvironment": false
+}

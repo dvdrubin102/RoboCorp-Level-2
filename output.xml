@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.12 on darwin)" generated="20231128 17:55:23.691" rpa="true" schemaversion="4">
+<suite id="s1" name="Tasks" source="/Users/gregoryiii/Desktop/RoboCorp/level-2-robot/tasks.robot">
+<test id="s1-t1" name="Order robots from RobotSpareBin Indistries Inc" line="18">
+<kw name="Open the robot order website">
+<kw name="Open Available Browser" library="RPA.Browser.Selenium">
+<arg>https://robotsparebinindustries.com/#/robot-order</arg>
+<doc>Attempts to open a browser on the user's device from a set of
+supported browsers. Automatically downloads a corresponding webdriver
+if none is already installed.</doc>
+<msg timestamp="20231128 17:55:25.270" level="INFO">Downloaded webdriver to: /Users/gregoryiii/.robocorp/webdrivers/.wdm/drivers/chromedriver/mac64/119.0.6045.105/chromedriver-mac-x64/chromedriver</msg>
+<msg timestamp="20231128 17:55:25.472" level="INFO">Webdriver version taken into use: ChromeDriver 119.0.6045.105 (38c72552c5e15ba9b3117c0967a0fd105072d7c6-refs/branch-heads/6045@{#1103})
+</msg>
+<msg timestamp="20231128 17:55:25.556" level="INFO">Targeted browser version: 119.0.6045</msg>
+<msg timestamp="20231128 17:55:25.557" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20231128 17:55:27.375" level="INFO">Created Chrome browser with arguments: --disable-dev-shm-usage --disable-web-security --allow-running-insecure-content --no-sandbox</msg>
+<msg timestamp="20231128 17:55:27.376" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: Webdriver executable 'chromedriver' is not in PATH (with disabled Selenium Manager)
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg timestamp="20231128 17:55:27.377" level="INFO">Opening url 'https://robotsparebinindustries.com/#/robot-order'</msg>
+<status status="PASS" starttime="20231128 17:55:25.007" endtime="20231128 17:55:28.699"/>
+</kw>
+<status status="PASS" starttime="20231128 17:55:25.007" endtime="20231128 17:55:28.699"/>
+</kw>
+<kw name="Download the orders file, read it as a table, and return the result">
+<kw name="Download" library="RPA.HTTP">
+<arg>https://robotsparebinindustries.com/orders.csv</arg>
+<arg>overwrite=True</arg>
+<doc>An alias for the ``HTTP Get`` keyword.</doc>
+<msg timestamp="20231128 17:55:28.703" level="INFO">Creating a new HTTP session</msg>
+<msg timestamp="20231128 17:55:28.703" level="INFO">Creating Session using : alias=rpasession_alias.httpsrobotsparebinindustries.com, url=https://robotsparebinindustries.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20231128 17:55:28.701" endtime="20231128 17:55:29.281"/>
+</kw>
+<status status="PASS" starttime="20231128 17:55:28.700" endtime="20231128 17:55:29.282"/>
+</kw>
+<status status="PASS" starttime="20231128 17:55:25.005" endtime="20231128 17:55:29.282"/>
+</test>
+<doc>Orders robots from RobotSpareBin Industries Inc.
+Saves the order HTML receipt as a PDF file.
+Saves the screenshot of the ordered robot.
+Embeds the screenshot of the robot to the PDF receipt.
+Creates ZIP archive of the receipts and the images.</doc>
+<status status="PASS" starttime="20231128 17:55:23.699" endtime="20231128 17:55:29.284"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tasks">Tasks</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
